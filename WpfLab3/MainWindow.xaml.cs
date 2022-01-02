@@ -34,9 +34,7 @@ namespace WpfLab3
             {
                 textBox.FontFamily = new FontFamily(fontName);
             }
-
         }
-
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             double fontSize = Convert.ToDouble(((sender as ComboBox).SelectedItem as TextBlock).Text);
@@ -46,7 +44,6 @@ namespace WpfLab3
                 textBox.FontSize = fontSize;
             }
         }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
