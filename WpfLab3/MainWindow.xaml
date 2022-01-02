@@ -4,8 +4,15 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfLab3"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        
+        
+        
+    </Window.Resources>
     <Window.CommandBindings>
         <CommandBinding Command="local:MyCommands.Exit" Executed="ExitExecuted"/>
         <CommandBinding Command="Open" Executed="OpenExecuted"/>
@@ -32,15 +39,12 @@
 
         <ToolBarTray Grid.Row="1">
             <ToolBar  Margin="5" Padding="5">
-                <ComboBox Margin="5" Padding="5" Width="200" SelectedIndex="0" SelectionChanged="ComboBox_SelectionChanged_1" >
-                    <TextBlock Text="Arial"/>
-                    <TextBlock Text="Times New Roman"/>
-                    <TextBlock Text="Verdana"/>
+                <ComboBox Margin="5" Padding="5" Width="200" SelectedIndex="0"  ItemsSource="{StaticResource FontFamily}" SelectionChanged="ComboBox_SelectionChanged_1" > 
+
+
                 </ComboBox>
-                <ComboBox Margin="5" Padding="5" Width="50" SelectedIndex="0" SelectionChanged="ComboBox_SelectionChanged">
-                    <TextBlock Text="16"/>
-                    <TextBlock Text="24"/>
-                    <TextBlock Text="48"/>
+                <ComboBox Margin="5" Padding="5" Width="50" SelectedIndex="0" ItemsSource="{StaticResource Size}" SelectionChanged="ComboBox_SelectionChanged" > 
+                    
                 </ComboBox>
             </ToolBar>
             <ToolBar Margin="5" Padding="5">
