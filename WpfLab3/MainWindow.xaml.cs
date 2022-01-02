@@ -137,12 +137,12 @@ namespace WpfLab3
         //    }
         //}
 
-        private void ExitExcuted(object sender, ExecutedRoutedEventArgs e)
+        private void ExitExecuted(object sender, ExecutedRoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
 
-        private void OpenExuted(object sender, ExecutedRoutedEventArgs e)
+        private void OpenExecuted(object sender, ExecutedRoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Текстовые файлы (*.txt)|*.txt|Все файлы (*.*)|*.*";
@@ -152,7 +152,7 @@ namespace WpfLab3
             }
         }
 
-        private void SaveExuted(object sender, ExecutedRoutedEventArgs e)
+        private void SaveExecuted(object sender, ExecutedRoutedEventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Текстовые файлы (*.txt)|*.txt|Все файлы (*.*)|*.*";
@@ -161,5 +161,7 @@ namespace WpfLab3
                 File.WriteAllText(saveFileDialog.FileName, textBox.Text);
             }
         }
+
+       
     }
 }
