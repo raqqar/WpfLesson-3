@@ -116,7 +116,15 @@ namespace WpfLab3
             RadioButton radioButton = (RadioButton)sender;
             if (textBox != null)
             {
-                textBox.Foreground = Brushes.Black;
+                if (styleBox.SelectedIndex==0)
+                {
+                    textBox.Foreground = Brushes.Black;
+                }
+                else
+                {
+                    textBox.Foreground = Brushes.White;
+                }
+                
             }
         }
 

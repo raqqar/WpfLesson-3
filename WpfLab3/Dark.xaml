@@ -10,4 +10,8 @@
         <Setter Property="Button.Foreground" Value="White"/>
         <Setter Property="Button.BorderBrush" Value="White"/>
     </Style>
+    <Style x:Key="Menu" BasedOn="{StaticResource WindowStyle}">
+        <Setter Property="TextBlock.Foreground" Value="White"/>
+        
+    </Style>
 </ResourceDictionary>
