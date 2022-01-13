@@ -8,14 +8,12 @@
         xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Style="{DynamicResource WindowStyle}">
-    <Window.Resources>
-        
-    </Window.Resources>
+    
     <Window.CommandBindings>
         <CommandBinding Command="local:MyCommands.Exit" Executed="ExitExecuted"/>
         <CommandBinding Command="Open" Executed="OpenExecuted"/>
         <CommandBinding Command="Save" Executed="SaveExecuted"/>
-        
+
     </Window.CommandBindings>
 
     <Grid>
@@ -27,8 +25,10 @@
         </Grid.RowDefinitions>
         <Menu VerticalContentAlignment="Top" Style="{DynamicResource Menu}" >
             <MenuItem Header="_Файл" Style="{DynamicResource Menu}">
-                <MenuItem Header="_Открыть" Command="ApplicationCommands.Open" Style="{DynamicResource Menu}" /> <!--Click="MenuItem_Click_1"-->
-                <MenuItem Header="_Сохранить" Command="ApplicationCommands.Save" Style="{DynamicResource Menu}"/> <!--Click="MenuItem_Click_2"-->
+                <MenuItem Header="_Открыть" Command="ApplicationCommands.Open" Style="{DynamicResource Menu}" />
+                <!--Click="MenuItem_Click_1"-->
+                <MenuItem Header="_Сохранить" Command="ApplicationCommands.Save" Style="{DynamicResource Menu}"/>
+                <!--Click="MenuItem_Click_2"-->
                 <Separator/>
                 <MenuItem   Command="local:MyCommands.Exit" Style="{DynamicResource Menu}">
                 </MenuItem>
@@ -38,11 +38,19 @@
         <ToolBarTray Grid.Row="1" Style="{DynamicResource Menu}" ToolBarTray.IsLocked="True" >
             <ToolBar  Margin="5" Padding="5" Style="{DynamicResource Menu}" ToolBar.OverflowMode="AsNeeded">
                 <ComboBox x:Name="styleBox" Style="{DynamicResource ButtonStyle}"/>
-                <ComboBox Margin="5" Padding="5" Width="200" SelectedIndex="0"  ItemsSource="{StaticResource FontFamily}" SelectionChanged="ComboBox_SelectionChanged_1" Style="{DynamicResource ButtonStyle}" > 
+                <ComboBox x:Name="fontlst" Width="120"  Margin="5" Padding="5"  SelectedIndex="0" Style="{DynamicResource ButtonStyle}">
+                    <ComboBoxItem Tag="Arial">Arial</ComboBoxItem>
+                    <ComboBoxItem Tag="Times New Roman">Times New Roman</ComboBoxItem>
+                    <ComboBoxItem Tag="Verdana">Verdana</ComboBoxItem>
                 </ComboBox>
-                <ComboBox Margin="5" Padding="5" Width="50" SelectedIndex="0" ItemsSource="{StaticResource Size}" SelectionChanged="ComboBox_SelectionChanged" Style="{DynamicResource ButtonStyle}">  
+                <ComboBox x:Name="szlist"  Width="Auto"  Margin="5" Padding="5"  SelectedIndex="0" Style="{DynamicResource ButtonStyle}">
+                    <ComboBoxItem Tag="16">16</ComboBoxItem>
+                    <ComboBoxItem Tag="24">24</ComboBoxItem>
+                    <ComboBoxItem Tag="48">48</ComboBoxItem>
                 </ComboBox>
-            <!--</ToolBar>
+                
+               
+                <!--</ToolBar>
             <ToolBar Margin="5" Padding="5" Style="{DynamicResource Menu}">-->
                 <Button Click="Button_Click" Style="{DynamicResource ButtonStyle}">
                     <Image Source="Data/bold.png" Width="20" Height="20" />
@@ -56,7 +64,7 @@
                     <Image Source="Data/underline.png" Width="20" Height="20" />
                 </Button>
                 <Separator/>
-            <!--</ToolBar>
+                <!--</ToolBar>
             <ToolBar Margin="5" Padding="5" Style="{DynamicResource Menu}">-->
                 <StackPanel VerticalAlignment="Center" Style="{DynamicResource Menu}">
                     <RadioButton Content="Черный" IsChecked="True" Click="RadioButton_Click" Style="{DynamicResource ButtonStyle}" />
@@ -64,7 +72,7 @@
                 </StackPanel>
             </ToolBar>
         </ToolBarTray>
-        <TextBox x:Name="textBox" Grid.Row="2" Margin="5" Padding="5" FontSize="16" FontFamily="Arial" 
+        <TextBox x:Name="textBox" Grid.Row="2" Margin="5" Padding="5" FontSize="{Binding ElementName=szlist, Path=SelectedItem.Tag}" FontFamily="{Binding ElementName=fontlst, Path=SelectedItem.Tag}" 
                  TextWrapping="Wrap" SpellCheck.IsEnabled="True" xml:lang="ru-Ru" Style="{DynamicResource TextBlockStyle}" >
 
         </TextBox>

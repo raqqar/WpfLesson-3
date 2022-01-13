@@ -2,14 +2,6 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
                     xmlns:sys="clr-namespace:System;assembly=mscorlib" 
                     xmlns:col="clr-namespace:System.Collections;assembly=mscorlib">
-    <col:ArrayList x:Key ="FontFamily" >
-        <TextBlock Text="Arial"/>
-        <TextBlock Text="Times New Roman" />
-        <TextBlock Text="Verdana" />
-    </col:ArrayList>
-    <col:ArrayList x:Key ="Size" >
-        <TextBlock Text="16"/>
-        <TextBlock Text="24"/>
-        <TextBlock Text="48"/>
-    </col:ArrayList>
+    
+    
 </ResourceDictionary>
